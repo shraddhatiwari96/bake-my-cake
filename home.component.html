@@ -1,0 +1,30 @@
+
+<div id="product-container">
+
+<div id="search-panel">
+  <input type="text" style="padding: 5px 20px;"  [(ngModel)]="searchText" (input)="filterItems()" placeholder="Search by item name" />
+  <select style="padding: 5px 20px;" [(ngModel)]="selectedCategory" id="filter-item" (change)="filterItems()">
+    <option value="">All Categories</option>
+    <option value="cakes">Cakes</option>
+    <option value="cookies">Cookies</option>
+    <option value="brownies">Brownies</option>
+  </select>
+  <button mat-raised-button class="clear-button" (click)="clearFilters()">Clear Filters</button>
+</div>
+
+<div *ngIf="filteredItems.length > 0; else noItems" >
+   <app-product-card class="product-card" *ngFor="let product of filteredItems"  [product] = "product">
+   </app-product-card>
+</div>
+
+<ng-template #noItems>
+  <p>No items found.</p>
+</ng-template>
+
+
+
+</div>
+
+
+
+

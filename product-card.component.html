@@ -1,0 +1,18 @@
+<a routerLink="order-page/{{product?.id}}">
+<mat-card class="product-card"  matRipple >
+    <img mat-card-image id="product-image" class="d-block w-100" src="../../assets/images/{{product?.image}}.jpg">
+    <mat-card-header class="product-header">
+        <mat-card-title class="product-name">{{product?.name}} </mat-card-title>
+        <mat-card-subtitle>Earliest  DeliveryBy :{{product?.deliverBy}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="product-content" >
+        <p>Price : Rs {{product?.price}}.00</p>
+        <p class="cart-icon">{{product?.rating}}  <img src="../../assets/images/rating.jpg" alt="rating"></p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button class="cart-button"  >Add to Cart</button>
+    </mat-card-actions>
+</mat-card>
+</a>
